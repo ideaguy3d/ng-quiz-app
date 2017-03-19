@@ -1,5 +1,5 @@
 vendor
 quiz_data.*
 images
-.idea
+**/.idea
 node_modules
