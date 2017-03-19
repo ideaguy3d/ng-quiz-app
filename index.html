@@ -6,18 +6,25 @@
 	<title>www.julius3d.com</title>
 	
 	<!-- Vendor CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	
 	<!-- Custom CSS -->
 	<link rel="stylesheet" type="text/css" href="styles/styles.css">
 
 </head>
-<body>
 
+
+<body ng-app="app-quiz">
 <section id="my-quiz">
 	<h1>Routing:</h1>
+	<h4 class="text-center">{{ 15+15 }} = 15+15</h4>
 	<!-- Progress div: -->
-	<div class="j-progress"></div>
+	<div class="j-progress">
+		<div class="answered correct"></div>
+		<div class="on"></div>
+		<div></div>
+	</div>
 	<!-- Intro div: -->
 	<div class="intro">
 		<h2>Intro</h2>
@@ -27,31 +34,51 @@
 		<button class="btn btn-warning">Begin</button>
 	</div>
 	<!-- Question div: -->
-	<div class="question">
+	<div class="question unanswered">
 		<p class="txt">What is front end routing?</p>
 		<p class="ans">Styling elements in a webpage.</p>
 		<p class="ans">Server side page switching.</p>
 		<p class="ans">Client side page switching.</p>
 		<p class="ans">DB operations on the server.</p>
-		<div class="feedback"></div>
+		<!-- feedback: -->
+		<div class="feedback">
+			<p>Correct! Good job ^_^</p>
+			<p>Wrong! Try again :T</p>
+			<p>More information feedback</p>
+			<div class="btn btn-sm btn-info"><strong>Continue</strong></div>
+		</div>
+		<!-- results -->
+		<div class="results">
+			<h3>The Results</h3>
+			<p>Your score was X.YZ%</p>
+			<p>Challenge your friends:</p>
+			<div class="share">
+				<a href="#" class="btn btn-sm btn-warning email">Email</a>
+				<a href="#" class="btn btn-sm btn-info twitter">Tweet</a>
+			</div>
+		</div>
 	</div>
 	<!-- Results div: -->
 	<div class="results"></div>
 </section>
 
-<nav class="navbar navbar-default navbar-fixed-bottom">
+<footer class="navbar navbar-default navbar-fixed-bottom">
 	<div class="container">
-		<a href="https://github.com/ideaguy3d/ng-quiz-app" class="btn btn-lg">
+		<a href="https://github.com/ideaguy3d/ng-quiz-app" target="_blank" class="btn btn-lg">
 			<strong>Source Code for this app</strong>
 		</a>
+		Built by:
+		<a href="http://julius3d.com" target="_blank">
+			<strong><i>Julius Alvarado</i></strong>
+		</a>
 	</div>
-</nav>
+</footer>
 
 
 <!-- Vendor Scripts -->
 <script src="vendor/angular/angular.min.js"></script>
 
 <!-- Custom Scripts -->
-
+<script src="client/app-quiz.js"></script>
 </body>
 </html>

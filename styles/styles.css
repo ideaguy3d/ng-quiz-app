@@ -20,6 +20,10 @@ body {
   background: url(../images/background.jpg) no-repeat 0 0;
   margin: auto;
   /*
+	//-- PROGRESS BAR SECTION --\\
+	-------- #my-quiz > .intro --------
+	*/
+  /*
 	//-- INTRO SECTION --\\
 	-------- #my-quiz > .intro --------
 	*/
@@ -31,6 +35,36 @@ body {
     text-align: center;
     text-transform: uppercase;
     font-weight: 300; }
+  #my-quiz .j-progress {
+    width: 550px;
+    position: absolute;
+    top: 160px;
+    left: 160px; }
+    #my-quiz .j-progress div {
+      position: relative;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin-right: 30px;
+      border-radius: 50%;
+      background-color: whitesmoke;
+      transition: background-color 1s; }
+    #my-quiz .j-progress div.correct::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -10px;
+      left: -4px;
+      width: 65px;
+      height: 40px;
+      background: url(../images/icon_correct.svg) no-repeat 0 0;
+      transition: opacity 1s, top 1s;
+      opacity: 0; }
+    #my-quiz .j-progress div.on, #my-quiz .j-progress div.answered {
+      background-color: #555555; }
+    #my-quiz .j-progress div.correct::after {
+      top: -5px;
+      opacity: 1; }
   #my-quiz .intro {
     position: absolute;
     top: 120px;
@@ -40,7 +74,7 @@ body {
   #my-quiz .question {
     position: absolute;
     top: 120px;
-    /*left: 700px;*/
+    left: 700px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 12px; }
@@ -72,9 +106,37 @@ body {
       border-width: 2px; }
     #my-quiz .question .ans.correct::after {
       background-image: url(../images/icon_correct.svg); }
+    #my-quiz .question .results {
+      position: absolute;
+      top: 225px;
+      left: 200px;
+      width: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 16px; }
+      #my-quiz .question .results .share {
+        margin-top: 20px; }
+        #my-quiz .question .results .share a.btn {
+          margin-right: 20px;
+          padding: 10px 8px 8px 42px;
+          background-repeat: no-repeat;
+          background-position: 10px 6px;
+          background-size: 25px 25px; }
+        #my-quiz .question .results .share a.btn.email {
+          background-image: url(../images/icon_email.svg); }
+        #my-quiz .question .results .share a.btn.twitter {
+          background-image: url(../images/icon_twitter.svg); }
   #my-quiz .question.unanswered .ans {
     cursor: pointer; }
   #my-quiz .question.unanswered .ans:hover {
     background-color: #555555; }
+  #my-quiz .question.unanswered .feedback {
+    margin-top: 50px;
+    transition: opacity 1.5s, margin-top 1.5s;
+    visibility: hidden;
+    opacity: 0; }
   #my-quiz .question.answered .ans {
     cursor: default; }
+  #my-quiz .question.answered .feedback {
+    visibility: visible;
+    opacity: 1;
+    margin-top: 10px; }
