@@ -2,3 +2,4 @@ vendor
 quiz_data.*
 images
 .idea
+node_modules

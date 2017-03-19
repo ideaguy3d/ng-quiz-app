@@ -1,0 +1,53 @@
+/*
+Julius Alvarado
+www.julius3d.com
+*/
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:900|Roboto:400,100);
+body {
+  background-color: #fff;
+  padding: 20px; }
+
+#my-quiz {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: whitesmoke;
+  position: relative;
+  display: block;
+  width: 700px;
+  height: 600px;
+  overflow: hidden;
+  background: url(../images/background.jpg) no-repeat 0 0;
+  margin: auto;
+  /*
+  -------- #my-quiz > .intro --------
+  */
+  /*
+  -------- #my-quiz > .question --------
+  */ }
+  #my-quiz h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300; }
+  #my-quiz .intro {
+    position: absolute;
+    top: 120px;
+    left: 700px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 12px; }
+  #my-quiz .question {
+    position: absolute;
+    top: 120px;
+    /*left: 700px;*/
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 12px; }
+    #my-quiz .question .ans {
+      display: inline-block;
+      border: solid thin whitesmoke;
+      border-radius: 8px;
+      padding: 8px;
+      width: 40%;
+      position: relative;
+      cursor: pointer;
+      margin: 8px 8px; }
