@@ -16,9 +16,9 @@
 
 
 <body ng-app="app-quiz">
-<section id="my-quiz">
-	<h1>Routing:</h1>
-	<h4 class="text-center">{{ 15+15 }} = 15+15</h4>
+<section id="my-quiz" ng-controller="QuizCtrl">
+	<h1>{{ introMessage }}:</h1>
+	<h2 class="text-center">Routing</h2>
 	<!-- Progress div: -->
 	<div class="j-progress">
 		<div class="answered correct"></div>
