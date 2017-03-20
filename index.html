@@ -16,30 +16,35 @@
 
 
 <body ng-app="app-quiz">
+
 <section id="my-quiz" ng-controller="QuizCtrl">
 	<h1>{{ introMessage }}:</h1>
 	<h2 class="text-center">Routing</h2>
+	
 	<!-- Progress div: -->
 	<div class="j-progress">
-		<div class="answered correct"></div>
-		<div class="on"></div>
-		<div></div>
+		<div class="{{ ($index === activeQuestion) ? 'on' : 'off'}}"
+		     ng-repeat="question in myQuestions"></div>
 	</div>
+	
 	<!-- Intro div: -->
-	<div class="intro">
+	<div class="intro {{ (activeQuestion > -1) ? 'inactive' : 'active' }}">
 		<h2>Intro</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid exercitationem facilis minus obcaecati
 		   omnis perspiciatis recusandae tenetur! Aliquam commodi cumque exercitationem harum illo ipsa iure
 		   perspiciatis quam sapiente unde!</p>
-		<button class="btn btn-warning">Begin</button>
+		<button class="btn btn-warning" ng-click="activeQuestion = 0">Begin</button>
 	</div>
+	
 	<!-- Question div: -->
-	<div class="question unanswered">
-		<p class="txt">What is front end routing?</p>
-		<p class="ans">Styling elements in a webpage.</p>
-		<p class="ans">Server side page switching.</p>
-		<p class="ans">Client side page switching.</p>
-		<p class="ans">DB operations on the server.</p>
+	<div ng-repeat="question in myQuestions" class="question
+		{{ question.questionState === 'answered' ? 'answered' : 'unanswered' }}
+		{{ $index === activeQuestion ? 'active' : 'inactive' }}">
+		<p class="txt">{{ question.question }}</p>
+		<p class="ans" ng-repeat="anwser in question.answers"
+		   ng-click="selectAnswer($parent.$index, $index)">
+			{{ anwser.text }}
+		</p>
 		<!-- feedback: -->
 		<div class="feedback">
 			<p>Correct! Good job ^_^</p>
@@ -47,19 +52,18 @@
 			<p>More information feedback</p>
 			<div class="btn btn-sm btn-info"><strong>Continue</strong></div>
 		</div>
-		<!-- results -->
-		<div class="results">
-			<h3>The Results</h3>
-			<p>Your score was X.YZ%</p>
-			<p>Challenge your friends:</p>
-			<div class="share">
-				<a href="#" class="btn btn-sm btn-warning email">Email</a>
-				<a href="#" class="btn btn-sm btn-info twitter">Tweet</a>
-			</div>
+	</div>
+	
+	<!-- Results div: -->
+	<div class="results">
+		<h3>The Results</h3>
+		<p>Your score was X.YZ%</p>
+		<p>Challenge your friends:</p>
+		<div class="share">
+			<a href="#" class="btn btn-sm btn-warning email">Email</a>
+			<a href="#" class="btn btn-sm btn-info twitter">Tweet</a>
 		</div>
 	</div>
-	<!-- Results div: -->
-	<div class="results"></div>
 </section>
 
 <footer class="navbar navbar-default navbar-fixed-bottom">
@@ -80,5 +84,6 @@
 
 <!-- Custom Scripts -->
 <script src="client/app-quiz.js"></script>
+
 </body>
 </html>

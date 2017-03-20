@@ -83,10 +83,15 @@ body {
 	*/
 	.intro {
 		position: absolute;
-		top: 120px;
+		top: 200px;
 		left: 700px;
 		background-color: $transparent-bg-5;
 		padding: 12px;
+		width: 700px;
+	}
+	
+	.intro.inactive, .inactive.answered {
+		left: -1200px;
 	}
 	
 	/*
@@ -141,35 +146,6 @@ body {
 		.ans.correct::after {
 			background-image: url(../images/icon_correct.svg);
 		}
-		
-		.results {
-			position: absolute;
-			top: 225px;
-			left: 200px;
-			width: auto;
-			background-color: $transparent-bg-5;
-			padding: 16px;
-			
-			.share {
-				margin-top: 20px;
-				
-				a.btn {
-					margin-right: 20px;
-					padding: 10px 8px 8px 42px;
-					background-repeat: no-repeat;
-					background-position: 10px 6px;
-					background-size: 25px 25px;
-				}
-				
-				a.btn.email {
-					background-image: url(../images/icon_email.svg);
-				}
-				
-				a.btn.twitter {
-					background-image: url(../images/icon_twitter.svg);
-				}
-			}
-		}
 	}
 	
 	.question.unanswered {
@@ -184,7 +160,7 @@ body {
 		.feedback {
 			margin-top: 50px;
 			transition: opacity 1.5s,
-			margin-top 1.5s;
+				margin-top 1.5s;
 			visibility: hidden;
 			opacity: 0;
 		}
@@ -201,6 +177,49 @@ body {
 			 margin-top: 10px;
 		 }
 	}
+	
+	/*
+	//-- RESULTS SECTION --\\
+	-------- #my-quiz > .results --------
+	*/
+	.results {
+		position: absolute;
+		top: 250px;
+		left: -250px;
+		width: auto;
+		background-color: $transparent-bg-5;
+		padding: 16px;
+		
+		.share {
+			margin-top: 20px;
+			
+			a.btn {
+				margin-right: 20px;
+				padding: 10px 8px 8px 42px;
+				background-repeat: no-repeat;
+				background-position: 10px 6px;
+				background-size: 25px 25px;
+			}
+			
+			a.btn.email {
+				background-image: url(../images/icon_email.svg);
+			}
+			
+			a.btn.twitter {
+				background-image: url(../images/icon_twitter.svg);
+			}
+		}
+	}
+	
+	// active section:
+	.active, .inactive {
+		transition: left 1.5s ease-in-out;
+	}
+	
+	.active {
+		left: 0 !important;
+	}
+	
 	
 }
 

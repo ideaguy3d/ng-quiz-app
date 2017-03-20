@@ -30,6 +30,10 @@ body {
   /*
 	//-- QUESTION SECTION --\\
 	-------- #my-quiz > .question --------
+	*/
+  /*
+	//-- RESULTS SECTION --\\
+	-------- #my-quiz > .results --------
 	*/ }
   #my-quiz h1 {
     text-align: center;
@@ -67,10 +71,13 @@ body {
       opacity: 1; }
   #my-quiz .intro {
     position: absolute;
-    top: 120px;
+    top: 200px;
     left: 700px;
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 12px; }
+    padding: 12px;
+    width: 700px; }
+  #my-quiz .intro.inactive, #my-quiz .inactive.answered {
+    left: -1200px; }
   #my-quiz .question {
     position: absolute;
     top: 120px;
@@ -106,25 +113,6 @@ body {
       border-width: 2px; }
     #my-quiz .question .ans.correct::after {
       background-image: url(../images/icon_correct.svg); }
-    #my-quiz .question .results {
-      position: absolute;
-      top: 225px;
-      left: 200px;
-      width: auto;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 16px; }
-      #my-quiz .question .results .share {
-        margin-top: 20px; }
-        #my-quiz .question .results .share a.btn {
-          margin-right: 20px;
-          padding: 10px 8px 8px 42px;
-          background-repeat: no-repeat;
-          background-position: 10px 6px;
-          background-size: 25px 25px; }
-        #my-quiz .question .results .share a.btn.email {
-          background-image: url(../images/icon_email.svg); }
-        #my-quiz .question .results .share a.btn.twitter {
-          background-image: url(../images/icon_twitter.svg); }
   #my-quiz .question.unanswered .ans {
     cursor: pointer; }
   #my-quiz .question.unanswered .ans:hover {
@@ -140,3 +128,26 @@ body {
     visibility: visible;
     opacity: 1;
     margin-top: 10px; }
+  #my-quiz .results {
+    position: absolute;
+    top: 250px;
+    left: -250px;
+    width: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 16px; }
+    #my-quiz .results .share {
+      margin-top: 20px; }
+      #my-quiz .results .share a.btn {
+        margin-right: 20px;
+        padding: 10px 8px 8px 42px;
+        background-repeat: no-repeat;
+        background-position: 10px 6px;
+        background-size: 25px 25px; }
+      #my-quiz .results .share a.btn.email {
+        background-image: url(../images/icon_email.svg); }
+      #my-quiz .results .share a.btn.twitter {
+        background-image: url(../images/icon_twitter.svg); }
+  #my-quiz .active, #my-quiz .inactive {
+    transition: left 1.5s ease-in-out; }
+  #my-quiz .active {
+    left: 0 !important; }
