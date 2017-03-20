@@ -126,6 +126,7 @@ body {
     cursor: default; }
   #my-quiz .question.answered .feedback {
     visibility: visible;
+    transition: opacity 1.5s, margin-top 1.5s;
     opacity: 1;
     margin-top: 10px; }
   #my-quiz .results {

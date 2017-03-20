@@ -41,6 +41,7 @@
 		{{ question.questionState === 'answered' ? 'answered' : 'unanswered' }}
 		{{ $index === activeQuestion ? 'active' : 'inactive' }}">
 		<p class="txt">{{ question.question }}</p>
+		<!-- answer inner loop -->
 		<p class="ans" ng-repeat="anwser in question.answers"
 		   ng-click="selectAnswer($parent.$index, $index)">
 			{{ anwser.text }}

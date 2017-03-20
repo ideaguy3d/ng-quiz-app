@@ -159,8 +159,7 @@ body {
 		
 		.feedback {
 			margin-top: 50px;
-			transition: opacity 1.5s,
-				margin-top 1.5s;
+			transition: opacity 1.5s, margin-top 1.5s;
 			visibility: hidden;
 			opacity: 0;
 		}
@@ -173,7 +172,8 @@ body {
 		
 		.feedback {
 			 visibility: visible;
-			 opacity: 1;
+			transition: opacity 1.5s, margin-top 1.5s;
+			opacity: 1;
 			 margin-top: 10px;
 		 }
 	}

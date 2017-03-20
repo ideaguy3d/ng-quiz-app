@@ -20,6 +20,7 @@
 
         $scope.selectAnswer = function(indexQuestion, indexAnswer){
             var questionState = $scope.myQuestions[indexQuestion].questionState;
+
             if(questionState != 'answered') { // .questionState is falsey because user has yet to click on an answer
                 $scope.myQuestions[indexQuestion].selectedAnswer = indexAnswer;
                 var correctAnswer = $scope.myQuestions[indexQuestion].correct;
